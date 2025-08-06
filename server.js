@@ -111,10 +111,10 @@ const studentsData = {
 // Build mentor credentials from environment variables
 const mentorCredentials = {};
 const mentorNames = [
-    'Jyoti Khurpude', 'Sanjivani Kulkarni', 'Mrunal Fatangare', 'Hemlata Ohal',
-    'Farahhdeeba Shaikh', 'Prerana Patil', 'Yogesh Patil', 'Vilas Rathod',
-    'Pradeep Paygude', 'Kajal Chavan', 'Megha Dhotey', 'Pallavi Nehete',
-    'Nita Dongre', 'Mrunal Aware', 'Shilpa Shitole', 'Vaishali Langote', 'Sulkshana Malwade'
+    'Prof. Mrs. J. G. Mante (Khurpade)', 'Prof. Mrs. S.H. Kulkarni', 'Prof. Mrs. M.P. Fatangare', 'Prof. Mrs. F.I. Shaikh',
+    'Prof. Mrs. H.S. Ohal', 'Prof. Mrs. P. S. Patil', 'Prof. Mrs. M. A. Dhotay', 'Prof. Mrs. S.J. Budhavale',
+    'Prof. Mrs. S. S. Malwade', 'Prof. Mrs. P.U. Nehete', 'Prof. Mrs. N. G. Dongre', 'Prof. Mrs. M. S. Aware',
+    'Prof. Mrs. V. B. Langote', 'Prof. Mr. Y. J. Gaikwad', 'Prof. Mr. V. C. Rathod', 'Prof. P. B. Paygude', 'Prof. I. R. Awate','Prof.Priti Rathod','Prof.Khushi Jain'
 ];
 
 for (let i = 1; i <= 17; i++) {
