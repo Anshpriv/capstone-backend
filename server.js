@@ -117,7 +117,7 @@ const mentorNames = [
     'Prof. Mrs. V. B. Langote', 'Prof. Mr. Y. J. Gaikwad', 'Prof. Mr. V. C. Rathod', 'Prof. P. B. Paygude', 'Prof. I. R. Awate','Prof.Priti Rathod','Prof.Khushi Jain'
 ];
 
-for (let i = 1; i <= 19; i++) {
+for (let i = 1; i <= mentorNames.length; i++) {
     const username = process.env[`MENTOR${i}_USERNAME`];
     const password = process.env[`MENTOR${i}_PASSWORD`];
     if (username && password) {
