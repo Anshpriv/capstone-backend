@@ -153,7 +153,7 @@ app.get('/api/students', (req, res) => {
 app.get('/api/mentors', (req, res) => {
     try {
         const mentorList = [];
-        for (let i = 1; i <= 17; i++) {
+        for (let i = 1; i <=  mentorNames.length; i++) {
             const username = process.env[`MENTOR${i}_USERNAME`];
             if (username && mentorNames[i - 1]) {
                 mentorList.push({
