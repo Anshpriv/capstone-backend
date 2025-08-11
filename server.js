@@ -244,7 +244,7 @@ const mentorNames = [
     'Prof. Mrs. J. G. Mante (Khurpade)', 'Prof. Mrs. S.H. Kulkarni', 'Prof. Mrs. M.P. Fatangare', 'Prof. Mrs. F.I. Shaikh',
     'Prof. Mrs. H.S. Ohal', 'Prof. Mrs. P. S. Patil', 'Prof. Mrs. M. A. Dhotay', 'Prof. Mrs. S.J. Budhavale',
     'Prof. Mrs. S. S. Malwade', 'Prof. Mrs. P.U. Nehete', 'Prof. Mrs. N. G. Dongre', 'Prof. Mrs. M. S. Aware',
-    'Prof. Mrs. V. B. Langote', 'Prof. Mr. Y. J. Gaikwad', 'Prof. Mr. V. C. Rathod', 'Prof. P. B. Paygude', 'Prof. I. R. Awate','Prof.Priti Rathod','Prof.Khushi Jain'
+    'Prof. Mrs. V. B. Langote', 'Prof. Mr. Y. J. Gaikwad', 'Prof. Mr. V. C. Rathod'
 ];
 
 for (let i = 1; i <= mentorNames.length; i++) {
