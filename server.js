@@ -65,7 +65,6 @@ const studentsData = {
 "Sulieman Goluguri",
 "Ayush Chandrashekhar Pasalkar",
 "Aarushi Pankaj Javali",
-"Aarya Aniruddha Deshpande",
 "Ishan Bhushan Dhaneshwar",
 "Nikhil Raju Jadhav",
 "Shaurya Rohit Shewale",
