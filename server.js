@@ -299,11 +299,21 @@ app.get('/api/mentors', (req, res) => {
         res.status(500).json({ error: 'Failed to fetch mentors' });
     }
 });
-// Student Authentication Endpoint - ADD THIS NEW ENDPOINT
+
 app.post('/api/auth/student', (req, res) => {
     try {
         const { studentName, accessCode, department } = req.body;
-        console.log('Student login attempt:', { studentName, department, accessCode });
+        
+        // 🔥 ENHANCED DEBUG LOGGING - Add this temporarily
+        console.log('=== DETAILED AUTH DEBUG ===');
+        console.log('Raw request body:', JSON.stringify(req.body));
+        console.log('Student name received:', `"${studentName}"`);
+        console.log('Student name type:', typeof studentName);
+        console.log('Student name length:', studentName ? studentName.length : 'null');
+        console.log('Access code received:', accessCode);
+        console.log('Access code type:', typeof accessCode);
+        console.log('Department:', department);
+        console.log('===============================');
         
         if (!studentName || !accessCode || !department) {
             return res.status(400).json({ 
@@ -312,31 +322,41 @@ app.post('/api/auth/student', (req, res) => {
             });
         }
 
-        // Find student in the specified department
         const departmentStudents = studentsData[department];
         if (!departmentStudents) {
+            console.log('❌ Invalid department:', department);
             return res.status(400).json({ 
                 success: false, 
                 message: 'Invalid department selected' 
             });
         }
 
-        // Search for student and verify access code
         let studentFound = false;
         let studentIndex = -1;
         
+        // 🔥 ENHANCED MATCHING WITH DETAILED LOGS
+        console.log('--- MATCHING PROCESS ---');
         for (let i = 0; i < departmentStudents.length; i++) {
             const [name, code] = departmentStudents[i];
-            if (name.toLowerCase().trim() === studentName.toLowerCase().trim() && 
-                code === parseInt(accessCode)) {
+            
+            // Log each comparison
+            const nameMatch = name.toLowerCase().trim() === studentName.toLowerCase().trim();
+            const codeMatch = code === parseInt(accessCode);
+            
+            console.log(`Checking [${i}]: "${name}" vs "${studentName}" | ${code} vs ${parseInt(accessCode)}`);
+            console.log(`  - Name match: ${nameMatch} | Code match: ${codeMatch}`);
+            
+            if (nameMatch && codeMatch) {
                 studentFound = true;
                 studentIndex = i;
+                console.log('✅ PERFECT MATCH FOUND!');
                 break;
             }
         }
+        console.log('--- END MATCHING ---');
 
         if (studentFound) {
-            console.log(`Student verified successfully: ${studentName} from ${department}`);
+            console.log(`✅ Student verified: ${studentName} from ${department}`);
             res.json({ 
                 success: true, 
                 message: 'Student verification successful',
@@ -344,11 +364,11 @@ app.post('/api/auth/student', (req, res) => {
                     name: studentName,
                     department: department,
                     index: studentIndex,
-                    id: `${department}_${studentIndex}` // This will be useful for team registration
+                    id: `${department}_${studentIndex}`
                 }
             });
         } else {
-            console.log(`Failed verification attempt: ${studentName} from ${department}`);
+            console.log(`❌ Verification failed: ${studentName} from ${department}`);
             res.json({ 
                 success: false, 
                 message: 'Invalid student name or access code. Please check your credentials carefully.' 
@@ -363,6 +383,7 @@ app.post('/api/auth/student', (req, res) => {
         });
     }
 });
+
 
 // Get all teams
 app.get('/api/teams', async (req, res) => {
