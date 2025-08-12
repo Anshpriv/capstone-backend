@@ -32,7 +32,7 @@ const supabase = createClient(
 );
 const studentsData = {
     "AIDS": [
-        ["Vedant Prakash Parab", 1354],
+        ["Vedant Prakash Parab",1354],
         ["Yash Nilesh Gujar", 5305],
         ["Shriya Shirish Sabnis", 2012],
         ["Aaliya Sohail Biswas", 5797],
