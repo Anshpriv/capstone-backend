@@ -106,7 +106,8 @@ const studentsData = {
         ["Parth Prashant Tupe", 8628],
         ["Aashka Akash Porwal", 4812],
         ["Manyok Samuel Shadrak Chol", 3156],
-        ["Rohan Chandrashekhar Kulkarni", 1284]
+        ["Rohan Chandrashekhar Kulkarni", 1284],
+        ["Vallabh Pawar", 9798]
     ],
     "CSE A": [
         ["Daksh Deepak Sharma", 5235],
